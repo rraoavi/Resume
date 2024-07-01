@@ -1,0 +1,80 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block main-content %}
+<h2>Create Resume</h2>
+<div class="form-container">
+  <form method="post">
+    {% csrf_token %}
+    
+    <!-- Section 1: Name, Phone No, Email -->
+    <div class="form-section">
+      <div class="form-group">
+        <label for="id_name">Name:</label>
+        {{ form.name }}
+      </div>
+      <div class="form-group">
+        <label for="id_phone">Phone No:</label>
+        {{ form.phone }}
+      </div>
+      <div class="form-group">
+        <label for="id_email">Email:</label>
+        {{ form.email }}
+      </div>
+      <div class="form-group">
+        <label for="id_languages">Languages:</label>
+        {{ form.languages }}
+      </div>
+    </div>
+    
+    <!-- Section 2: State, City, Block, House Number -->
+    <div class="form-section">
+      <div class="form-group">
+        <label for="id_state">State:</label>
+        {{ form.state }}
+      </div>
+      <div class="form-group">
+        <label for="id_city">City:</label>
+        {{ form.city }}
+      </div>
+      <div class="form-group">
+        <label for="id_block">Block:</label>
+        {{ form.block }}
+      </div>
+      <div class="form-group">
+        <label for="id_house_number">House Number:</label>
+        {{ form.house_number }}
+      </div>
+    </div>
+    
+    <!-- Section 3: Skills and Experience -->
+    <div class="form-section">
+      <div class="form-group">
+        <label for="id_skills">Skills:</label>
+        {{ form.skills }}
+      </div>
+      <div class="form-group">
+        <label for="id_experience">Experience:</label>
+        {{ form.experience }}
+      </div>
+    </div>
+    
+    <!-- Section 4: Education -->
+    <div class="form-section">
+      <div class="form-group">
+        <label for="id_education">Education:</label>
+        {{ form.education }}
+      </div>
+      <div class="form-group">
+        <label for="id_projects">Projects:</label>
+        {{ form.projects }}
+      </div>
+    </div>
+    
+    
+    
+    <button type="submit">Submit</button>
+  </form>
+</div>
+{% endblock main-content %}
+

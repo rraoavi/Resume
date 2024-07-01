@@ -1,0 +1,50 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block main-content %}
+<div class="resume-container">
+    <div class="resume-header">
+        <h1>{{ resume.name }}</h1>
+        <h5>{{ resume.email }}</h5>
+    </div>
+
+    <div class="resume-columns">
+        <!-- Column 1: Personal Info -->
+        <div class="resume-column">
+            <h2>Personal Info</h2>
+            <p><strong>Address:</strong> {{ resume.house_number }}, {{ resume.block }}, {{ resume.city }}, {{ resume.state }}</p>
+            <p><strong>Phone:</strong> {{ resume.phone }}</p>
+            <p><strong>Email:</strong> {{ resume.email }}</p>
+            <p><strong>Languages:</strong> {{ resume.languages }}</p>
+        </div>
+
+        <!-- Column 2: Skills -->
+        <div class="resume-column">
+            <h2>Skills</h2>
+            <p class="wrap-text">{{ resume.skills }}</p>
+        </div>
+
+        <!-- Column 3: Experience -->
+        <div class="resume-column">
+            <h2>Experience</h2>
+            <p class="wrap-text">{{ resume.experience }}</p>
+        </div>
+
+        <!-- Column 4: Projects -->
+        <div class="resume-column">
+            <h2>Projects</h2>
+            <p class="wrap-text">{{ resume.projects }}</p>
+        </div>
+        <div class="resume-column">
+            <h2>Education</h2>
+            <p class="wrap-text">{{ resume.education }}</p>
+        </div>
+        
+    </div>
+    
+</div>
+<a href="{% url 'download_jpg' pk=resume.pk %}" target="_blank">
+    <button class="round-button2">Save Resume</button>
+</a>
+
+{% endblock main-content %}

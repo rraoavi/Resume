@@ -1,0 +1,24 @@
+{% extends "app/base.html" %}
+{% load static %}
+{% block main-content %}
+<section id="hero">
+    <div class="image-container">
+        <img src="{% static 'app/images/resume.jpg' %}" alt="Your Image">
+    </div>
+    <div class="text-area">
+        <h3>Free online resume builder</h3>
+        <a href="{% url 'resume_create' %}">
+            <button class="round-button">Build My Resume</button>
+        </a>
+    </div>
+</section>
+<section id="info">
+    <div class="info-content">
+        <h2>Why Us?</h2>
+        <p>Our online resume builder offers a quick and easy way to create your professional resume. Create a resume using our online resume wizard, plus take advantage of expert suggestions and customizable modern and professional resume templates. Free users have access to our easy-to-use tool and TXT file downloads.</p>
+        
+    </div>
+</section>
+
+
+{% endblock main-content %}
